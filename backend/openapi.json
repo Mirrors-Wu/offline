@@ -1,0 +1,2063 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "offline小程序-后台管理系统",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/offline/login/login_by_account": {
+            "post": {
+                "tags": [
+                    "登录模块"
+                ],
+                "summary": "用户登录",
+                "operationId": "app_login_login_by_account_offline_login_login_by_account_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResp"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_type/create": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "新建字典类型",
+                "operationId": "app_dict_dict_type_create_offline_dict_dict_type_create_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictTypeCreateBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_type/get": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "查询字典类型",
+                "operationId": "app_dict_dict_type_get_offline_dict_dict_type_get_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DictTypeGetResp"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_type/edit": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "编辑字典类型",
+                "operationId": "app_dict_dict_type_edit_offline_dict_dict_type_edit_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictTypeEditBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_type/delete": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "删除字典类型",
+                "operationId": "app_dict_dict_type_delete_offline_dict_dict_type_delete_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictTypeDeleteBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_data/create": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "新建字典标签",
+                "operationId": "app_dict_dict_data_create_offline_dict_dict_data_create_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictDataCreateBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_data/get": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "查询字典标签",
+                "operationId": "app_dict_dict_data_get_offline_dict_dict_data_get_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictDataGetBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DictDataGetResp"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_data/edit": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "编辑字典标签",
+                "operationId": "app_dict_dict_data_edit_offline_dict_dict_data_edit_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictDataEditBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/dict/dict_data/delete": {
+            "post": {
+                "tags": [
+                    "字典管理"
+                ],
+                "summary": "删除字典标签",
+                "operationId": "app_dict_dict_data_delete_offline_dict_dict_data_delete_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DictDataDeleteBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/group/create": {
+            "post": {
+                "tags": [
+                    "社团管理"
+                ],
+                "summary": "创建社团",
+                "operationId": "group_create_offline_group_create_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GroupCreateBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/group/get": {
+            "post": {
+                "tags": [
+                    "社团管理"
+                ],
+                "summary": "获取社团信息",
+                "operationId": "group_get_offline_group_get_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GroupGetResp"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/groupedit": {
+            "post": {
+                "tags": [
+                    "社团管理"
+                ],
+                "summary": "修改社团信息",
+                "operationId": "group_edit_offline_groupedit_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GroupEditBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/groupdelete": {
+            "post": {
+                "tags": [
+                    "社团管理"
+                ],
+                "summary": "删除社团",
+                "operationId": "group_delete_offline_groupdelete_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GroupDeleteBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/activity/create": {
+            "post": {
+                "tags": [
+                    "活动管理"
+                ],
+                "summary": "创建活动",
+                "operationId": "activity_create_offline_activity_create_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ActivityCreateBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/activity/get": {
+            "post": {
+                "tags": [
+                    "活动管理"
+                ],
+                "summary": "获取活动",
+                "operationId": "activity_get_offline_activity_get_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ActivityGetResp"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/activityedit": {
+            "post": {
+                "tags": [
+                    "活动管理"
+                ],
+                "summary": "修改活动信息",
+                "operationId": "activity_edit_offline_activityedit_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ActivityEditBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/activitydelete": {
+            "post": {
+                "tags": [
+                    "活动管理"
+                ],
+                "summary": "删除活动",
+                "operationId": "activity_delete_offline_activitydelete_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ActivityDeleteBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/common/upload_file/{file_type}": {
+            "post": {
+                "tags": [
+                    "通用接口"
+                ],
+                "summary": "上传文件",
+                "operationId": "common_upload_file_offline_common_upload_file__file_type__post",
+                "parameters": [
+                    {
+                        "name": "file_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "File Type"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_common_upload_file_offline_common_upload_file__file_type__post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadFileResp"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offline/common/download_file": {
+            "post": {
+                "tags": [
+                    "通用接口"
+                ],
+                "summary": "下载文件",
+                "operationId": "common_download_file_offline_common_download_file_post",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Token"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DownloadFileBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ActivityCreateBody": {
+                "properties": {
+                    "activity_name": {
+                        "type": "string",
+                        "title": "Activity Name"
+                    },
+                    "activity_status": {
+                        "type": "integer",
+                        "title": "Activity Status"
+                    },
+                    "activity_type_id": {
+                        "type": "integer",
+                        "title": "Activity Type Id"
+                    },
+                    "activity_type": {
+                        "type": "string",
+                        "title": "Activity Type"
+                    },
+                    "photo_path": {
+                        "type": "string",
+                        "title": "Photo Path"
+                    },
+                    "number_limit_lower": {
+                        "type": "integer",
+                        "title": "Number Limit Lower"
+                    },
+                    "number_limit_upper": {
+                        "type": "integer",
+                        "title": "Number Limit Upper"
+                    },
+                    "price": {
+                        "type": "number",
+                        "title": "Price"
+                    },
+                    "region_id": {
+                        "type": "integer",
+                        "title": "Region Id"
+                    },
+                    "region": {
+                        "type": "string",
+                        "title": "Region"
+                    },
+                    "group_id": {
+                        "type": "integer",
+                        "title": "Group Id"
+                    },
+                    "group_name": {
+                        "type": "string",
+                        "title": "Group Name"
+                    },
+                    "start_time": {
+                        "type": "string",
+                        "title": "Start Time"
+                    },
+                    "end_time": {
+                        "type": "string",
+                        "title": "End Time"
+                    },
+                    "register_end_time": {
+                        "type": "string",
+                        "title": "Register End Time"
+                    },
+                    "activity_info": {
+                        "type": "string",
+                        "title": "Activity Info"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "activity_name",
+                    "activity_status",
+                    "activity_type_id",
+                    "activity_type",
+                    "photo_path",
+                    "number_limit_lower",
+                    "number_limit_upper",
+                    "price",
+                    "region_id",
+                    "region",
+                    "group_id",
+                    "group_name",
+                    "start_time",
+                    "end_time",
+                    "register_end_time",
+                    "activity_info"
+                ],
+                "title": "ActivityCreateBody"
+            },
+            "ActivityDeleteBody": {
+                "properties": {
+                    "activity_id": {
+                        "type": "integer",
+                        "title": "Activity Id"
+                    },
+                    "activity_name": {
+                        "type": "string",
+                        "title": "Activity Name"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "activity_id",
+                    "activity_name"
+                ],
+                "title": "ActivityDeleteBody"
+            },
+            "ActivityEditBody": {
+                "properties": {
+                    "activity_id": {
+                        "type": "integer",
+                        "title": "Activity Id"
+                    },
+                    "activity_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Activity Name"
+                    },
+                    "activity_status": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Activity Status"
+                    },
+                    "activity_type_id": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Activity Type Id"
+                    },
+                    "activity_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Activity Type"
+                    },
+                    "photo_path": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Photo Path"
+                    },
+                    "number_limit_lower": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Number Limit Lower"
+                    },
+                    "number_limit_upper": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Number Limit Upper"
+                    },
+                    "price": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Price"
+                    },
+                    "region_id": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Region Id"
+                    },
+                    "region": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Region"
+                    },
+                    "group_id": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Group Id"
+                    },
+                    "group_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Group Name"
+                    },
+                    "start_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Start Time"
+                    },
+                    "end_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "End Time"
+                    },
+                    "register_end_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Register End Time"
+                    },
+                    "activity_info": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Activity Info"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "activity_id"
+                ],
+                "title": "ActivityEditBody"
+            },
+            "ActivityGetItem": {
+                "properties": {
+                    "activity_id": {
+                        "type": "integer",
+                        "title": "Activity Id"
+                    },
+                    "activity_name": {
+                        "type": "string",
+                        "title": "Activity Name"
+                    },
+                    "activity_status": {
+                        "type": "string",
+                        "title": "Activity Status"
+                    },
+                    "activity_type_id": {
+                        "type": "integer",
+                        "title": "Activity Type Id"
+                    },
+                    "activity_type": {
+                        "type": "string",
+                        "title": "Activity Type"
+                    },
+                    "photo_path": {
+                        "type": "string",
+                        "title": "Photo Path"
+                    },
+                    "number_limit_lower": {
+                        "type": "integer",
+                        "title": "Number Limit Lower"
+                    },
+                    "number_limit_upper": {
+                        "type": "integer",
+                        "title": "Number Limit Upper"
+                    },
+                    "price": {
+                        "type": "number",
+                        "title": "Price"
+                    },
+                    "region_id": {
+                        "type": "integer",
+                        "title": "Region Id"
+                    },
+                    "region": {
+                        "type": "string",
+                        "title": "Region"
+                    },
+                    "group_id": {
+                        "type": "integer",
+                        "title": "Group Id"
+                    },
+                    "group_name": {
+                        "type": "string",
+                        "title": "Group Name"
+                    },
+                    "start_time": {
+                        "type": "string",
+                        "title": "Start Time"
+                    },
+                    "end_time": {
+                        "type": "string",
+                        "title": "End Time"
+                    },
+                    "register_end_time": {
+                        "type": "string",
+                        "title": "Register End Time"
+                    },
+                    "activity_info": {
+                        "type": "string",
+                        "title": "Activity Info"
+                    },
+                    "create_time": {
+                        "type": "string",
+                        "title": "Create Time"
+                    },
+                    "create_user": {
+                        "type": "string",
+                        "title": "Create User"
+                    },
+                    "update_time": {
+                        "type": "string",
+                        "title": "Update Time"
+                    },
+                    "update_user": {
+                        "type": "string",
+                        "title": "Update User"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "activity_id",
+                    "activity_name",
+                    "activity_status",
+                    "activity_type_id",
+                    "activity_type",
+                    "photo_path",
+                    "number_limit_lower",
+                    "number_limit_upper",
+                    "price",
+                    "region_id",
+                    "region",
+                    "group_id",
+                    "group_name",
+                    "start_time",
+                    "end_time",
+                    "register_end_time",
+                    "activity_info",
+                    "create_time",
+                    "create_user",
+                    "update_time",
+                    "update_user"
+                ],
+                "title": "ActivityGetItem"
+            },
+            "ActivityGetResp": {
+                "properties": {
+                    "activity_list": {
+                        "items": {
+                            "$ref": "#/components/schemas/ActivityGetItem"
+                        },
+                        "type": "array",
+                        "title": "Activity List"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "activity_list"
+                ],
+                "title": "ActivityGetResp"
+            },
+            "Body_common_upload_file_offline_common_upload_file__file_type__post": {
+                "properties": {
+                    "file": {
+                        "type": "string",
+                        "format": "binary",
+                        "title": "File"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "file"
+                ],
+                "title": "Body_common_upload_file_offline_common_upload_file__file_type__post"
+            },
+            "DictDataCreateBody": {
+                "properties": {
+                    "dict_name": {
+                        "type": "string",
+                        "maxLength": 20,
+                        "minLength": 2,
+                        "title": "Dict Name"
+                    },
+                    "dict_type_id": {
+                        "type": "integer",
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "type": "string",
+                        "title": "Dict Type"
+                    },
+                    "dict_value": {
+                        "type": "string",
+                        "title": "Dict Value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_name",
+                    "dict_type_id",
+                    "dict_type",
+                    "dict_value"
+                ],
+                "title": "DictDataCreateBody"
+            },
+            "DictDataDeleteBody": {
+                "properties": {
+                    "dict_id": {
+                        "type": "integer",
+                        "title": "Dict Id"
+                    },
+                    "dict_name": {
+                        "type": "string",
+                        "title": "Dict Name"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_id",
+                    "dict_name"
+                ],
+                "title": "DictDataDeleteBody"
+            },
+            "DictDataEditBody": {
+                "properties": {
+                    "dict_id": {
+                        "type": "integer",
+                        "title": "Dict Id"
+                    },
+                    "dict_name": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "maxLength": 20,
+                                "minLength": 2
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Dict Name"
+                    },
+                    "dict_type_id": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Dict Type"
+                    },
+                    "dict_value": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Dict Value"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_id"
+                ],
+                "title": "DictDataEditBody"
+            },
+            "DictDataGetBody": {
+                "properties": {
+                    "dict_type_id": {
+                        "type": "integer",
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "type": "string",
+                        "title": "Dict Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_type_id",
+                    "dict_type"
+                ],
+                "title": "DictDataGetBody"
+            },
+            "DictDataGetItem": {
+                "properties": {
+                    "dict_id": {
+                        "type": "integer",
+                        "title": "Dict Id"
+                    },
+                    "dict_name": {
+                        "type": "string",
+                        "title": "Dict Name"
+                    },
+                    "dict_type_id": {
+                        "type": "integer",
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "type": "string",
+                        "title": "Dict Type"
+                    },
+                    "dict_value": {
+                        "type": "string",
+                        "title": "Dict Value"
+                    },
+                    "create_time": {
+                        "type": "string",
+                        "title": "Create Time"
+                    },
+                    "create_user": {
+                        "type": "string",
+                        "title": "Create User"
+                    },
+                    "update_time": {
+                        "type": "string",
+                        "title": "Update Time"
+                    },
+                    "update_user": {
+                        "type": "string",
+                        "title": "Update User"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_id",
+                    "dict_name",
+                    "dict_type_id",
+                    "dict_type",
+                    "dict_value",
+                    "create_time",
+                    "create_user",
+                    "update_time",
+                    "update_user"
+                ],
+                "title": "DictDataGetItem"
+            },
+            "DictDataGetResp": {
+                "properties": {
+                    "dict_list": {
+                        "items": {
+                            "$ref": "#/components/schemas/DictDataGetItem"
+                        },
+                        "type": "array",
+                        "title": "Dict List"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_list"
+                ],
+                "title": "DictDataGetResp"
+            },
+            "DictTypeCreateBody": {
+                "properties": {
+                    "dict_type": {
+                        "type": "string",
+                        "maxLength": 20,
+                        "minLength": 2,
+                        "title": "Dict Type"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "title": "Notes"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_type",
+                    "notes"
+                ],
+                "title": "DictTypeCreateBody"
+            },
+            "DictTypeDeleteBody": {
+                "properties": {
+                    "dict_type_id": {
+                        "type": "integer",
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "type": "string",
+                        "title": "Dict Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_type_id",
+                    "dict_type"
+                ],
+                "title": "DictTypeDeleteBody"
+            },
+            "DictTypeEditBody": {
+                "properties": {
+                    "dict_type_id": {
+                        "type": "integer",
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Dict Type"
+                    },
+                    "status": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Status"
+                    },
+                    "notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Notes"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_type_id"
+                ],
+                "title": "DictTypeEditBody"
+            },
+            "DictTypeGetItem": {
+                "properties": {
+                    "dict_type_id": {
+                        "type": "integer",
+                        "title": "Dict Type Id"
+                    },
+                    "dict_type": {
+                        "type": "string",
+                        "title": "Dict Type"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "title": "Status"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "title": "Notes"
+                    },
+                    "create_time": {
+                        "type": "string",
+                        "title": "Create Time"
+                    },
+                    "create_user": {
+                        "type": "string",
+                        "title": "Create User"
+                    },
+                    "update_time": {
+                        "type": "string",
+                        "title": "Update Time"
+                    },
+                    "update_user": {
+                        "type": "string",
+                        "title": "Update User"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_type_id",
+                    "dict_type",
+                    "status",
+                    "notes",
+                    "create_time",
+                    "create_user",
+                    "update_time",
+                    "update_user"
+                ],
+                "title": "DictTypeGetItem"
+            },
+            "DictTypeGetResp": {
+                "properties": {
+                    "dict_type_list": {
+                        "items": {
+                            "$ref": "#/components/schemas/DictTypeGetItem"
+                        },
+                        "type": "array",
+                        "title": "Dict Type List"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "dict_type_list"
+                ],
+                "title": "DictTypeGetResp"
+            },
+            "DownloadFileBody": {
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "title": "Path"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "path"
+                ],
+                "title": "DownloadFileBody"
+            },
+            "GroupCreateBody": {
+                "properties": {
+                    "group_name": {
+                        "type": "string",
+                        "maxLength": 20,
+                        "minLength": 2,
+                        "title": "Group Name"
+                    },
+                    "group_type_id": {
+                        "type": "integer",
+                        "title": "Group Type Id"
+                    },
+                    "group_type": {
+                        "type": "string",
+                        "title": "Group Type"
+                    },
+                    "profile_path": {
+                        "type": "string",
+                        "title": "Profile Path"
+                    },
+                    "photo_path": {
+                        "type": "string",
+                        "title": "Photo Path"
+                    },
+                    "group_info": {
+                        "type": "string",
+                        "title": "Group Info"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "group_name",
+                    "group_type_id",
+                    "group_type",
+                    "profile_path",
+                    "photo_path",
+                    "group_info"
+                ],
+                "title": "GroupCreateBody"
+            },
+            "GroupDeleteBody": {
+                "properties": {
+                    "group_id": {
+                        "type": "integer",
+                        "title": "Group Id"
+                    },
+                    "group_name": {
+                        "type": "string",
+                        "title": "Group Name"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "group_id",
+                    "group_name"
+                ],
+                "title": "GroupDeleteBody"
+            },
+            "GroupEditBody": {
+                "properties": {
+                    "group_id": {
+                        "type": "integer",
+                        "title": "Group Id"
+                    },
+                    "group_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Group Name"
+                    },
+                    "group_type_id": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Group Type Id"
+                    },
+                    "group_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Group Type"
+                    },
+                    "profile_path": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Profile Path"
+                    },
+                    "photo_path": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Photo Path"
+                    },
+                    "group_info": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Group Info"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "group_id",
+                    "group_name",
+                    "group_type_id",
+                    "group_type",
+                    "profile_path",
+                    "photo_path",
+                    "group_info"
+                ],
+                "title": "GroupEditBody"
+            },
+            "GroupGetItem": {
+                "properties": {
+                    "group_id": {
+                        "type": "integer",
+                        "title": "Group Id"
+                    },
+                    "group_name": {
+                        "type": "string",
+                        "title": "Group Name"
+                    },
+                    "group_type_id": {
+                        "type": "integer",
+                        "title": "Group Type Id"
+                    },
+                    "group_type": {
+                        "type": "string",
+                        "title": "Group Type"
+                    },
+                    "profile_path": {
+                        "type": "string",
+                        "title": "Profile Path"
+                    },
+                    "photo_path": {
+                        "type": "string",
+                        "title": "Photo Path"
+                    },
+                    "group_info": {
+                        "type": "string",
+                        "title": "Group Info"
+                    },
+                    "create_time": {
+                        "type": "string",
+                        "title": "Create Time"
+                    },
+                    "create_user": {
+                        "type": "string",
+                        "title": "Create User"
+                    },
+                    "update_time": {
+                        "type": "string",
+                        "title": "Update Time"
+                    },
+                    "update_user": {
+                        "type": "string",
+                        "title": "Update User"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "group_id",
+                    "group_name",
+                    "group_type_id",
+                    "group_type",
+                    "profile_path",
+                    "photo_path",
+                    "group_info",
+                    "create_time",
+                    "create_user",
+                    "update_time",
+                    "update_user"
+                ],
+                "title": "GroupGetItem"
+            },
+            "GroupGetResp": {
+                "properties": {
+                    "group_list": {
+                        "items": {
+                            "$ref": "#/components/schemas/GroupGetItem"
+                        },
+                        "type": "array",
+                        "title": "Group List"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "group_list"
+                ],
+                "title": "GroupGetResp"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "LoginBody": {
+                "properties": {
+                    "user_name": {
+                        "type": "string",
+                        "title": "账号",
+                        "description": "",
+                        "example": "admin"
+                    },
+                    "password": {
+                        "type": "string",
+                        "title": "密码",
+                        "description": "",
+                        "example": "123456"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "user_name",
+                    "password"
+                ],
+                "title": "LoginBody"
+            },
+            "LoginResp": {
+                "properties": {
+                    "user_name": {
+                        "type": "string",
+                        "maxLength": 20,
+                        "minLength": 5,
+                        "title": "账号",
+                        "description": "",
+                        "example": "admin"
+                    },
+                    "token": {
+                        "type": "string",
+                        "title": "token",
+                        "description": "",
+                        "example": "this is a token"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "user_name",
+                    "token"
+                ],
+                "title": "LoginResp"
+            },
+            "UploadFileResp": {
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "title": "Path"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "path"
+                ],
+                "title": "UploadFileResp"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            }
+        }
+    }
+}
